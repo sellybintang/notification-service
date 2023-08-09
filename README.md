@@ -13,16 +13,18 @@ Tugas ini bertujuan untuk mengembangkan layanan notifikasi dalam aplikasi kami. 
 
 ## Panduan Penggunaan
 1. **Membuat Notifikasi Baru:** Menggunakan endpoint API `/notifications`, kirimkan data notifikasi dalam format JSON untuk menyimpan notifikasi baru.
+```json
 POST /notifications
 Content-Type: application/json
 {
 "user_id": "user123",
 "message": "Pesan notifikasi Anda disini."
 }
-
+```
 2. **Mengambil Daftar Notifikasi:** Menggunakan endpoint API `/notifications/user/:user_id`, ambil daftar notifikasi pengguna tertentu.
+```json
 GET /notifications/user/user123
-
+```
 3. **Pengiriman Notifikasi:** Notifikasi akan diambil dari antrian pesan dan dikirim ke pengguna sesuai preferensi mereka.
 
 4. **Penjadwalan Notifikasi:** Notifikasi yang dijadwalkan akan ditempatkan di antrian pesan sesuai dengan waktu yang diatur.
