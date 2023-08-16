@@ -6,9 +6,11 @@ const body_parser= require('body-parser');
 const app = express()
 const port = process.env.PORT || 3009
 const {notificationQueue} = require ('./lib/notificationQueue');
+const {createNotification, getNotification} = require('./controller/notificationController')
 
-
-
+notificationQueue()
+createNotification()
+getNotification()
 database()
 
 app.use (express.json());
@@ -21,5 +23,5 @@ app.use(router)
 
 app.listen(port,async ()=>{
     console.log(`Express is listening on port ${port}`);
-    await notificationQueue(notification);
+   ;
 })
